@@ -7,6 +7,7 @@ int main()
 {
     int array[10];
     int time = 0; 
+    int max = 9;
 
     cout << "Hello World!\n";
 
@@ -15,17 +16,19 @@ int main()
         cin >> array[i];
     }
     
-
-    for (int j = 0; j < 9; j++) // Меняем местами два числа
+    for (int b = 0; b < 10; b++)
     {
-        if (array[j] > array[j + 1])
+        for (int j = 0; j < max; j++) // Меняем местами два числа
         {
-            time = array[j + 1];
-            array[j + 1] = array[j];
-            array[j] = time; 
+            if (array[j] > array[j + 1])
+            {
+                time = array[j + 1];
+                array[j + 1] = array[j];
+                array[j] = time;
+            }
         }
+        max--;
     }
-
     for (int a = 0; a < 10; a++)  // Заполнение массива 
     {
         cout << array[a] << ", ";
